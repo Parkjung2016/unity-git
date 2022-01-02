@@ -99,6 +99,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -712,6 +713,32 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      button_rock_Play_1: 21300002
+      button_rock_Play_23: 21300046
+      button_rock_Play_13: 21300026
+      button_rock_Play_14: 21300028
+      button_rock_Play_17: 21300034
+      button_rock_Play_18: 21300036
+      button_rock_Play_22: 21300044
+      button_rock_Play_3: 21300006
+      button_rock_Play_6: 21300012
+      button_rock_Play_21: 21300042
+      button_rock_Play_11: 21300022
+      button_rock_Play_16: 21300032
+      button_rock_Play_2: 21300004
+      button_rock_Play_9: 21300018
+      button_rock_Play_20: 21300040
+      button_rock_Play_24: 21300048
+      button_rock_Play_4: 21300008
+      button_rock_Play_19: 21300038
+      button_rock_Play_5: 21300010
+      button_rock_Play_10: 21300020
+      button_rock_Play_8: 21300016
+      button_rock_Play_7: 21300014
+      button_rock_Play_0: 21300000
+      button_rock_Play_15: 21300030
+      button_rock_Play_12: 21300024
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

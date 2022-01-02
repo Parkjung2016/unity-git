@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -976,6 +977,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      button_rock_Play4_35: 21300044
+      button_rock_Play4_38: 21300050
+      button_rock_Play4_4: 21300008
+      button_rock_Play4_8: 21300016
+      button_rock_Play4_42: 21300054
+      button_rock_Play4_33: 21300042
+      button_rock_Play4_5: 21300010
+      button_rock_Play4_44: 21300056
+      button_rock_Play4_14: 21300022
+      button_rock_Play4_20: 21300026
+      button_rock_Play4_7: 21300014
+      button_rock_Play4_49: 21300062
+      button_rock_Play4_30: 21300040
+      button_rock_Play4_50: 21300064
+      button_rock_Play4_27: 21300034
+      button_rock_Play4_37: 21300048
+      button_rock_Play4_25: 21300030
+      button_rock_Play4_26: 21300032
+      button_rock_Play4_18: 21300024
+      button_rock_Play4_3: 21300006
+      button_rock_Play4_22: 21300028
+      button_rock_Play4_40: 21300052
+      button_rock_Play4_28: 21300036
+      button_rock_Play4_0: 21300000
+      button_rock_Play4_2: 21300004
+      button_rock_Play4_9: 21300018
+      button_rock_Play4_36: 21300046
+      button_rock_Play4_6: 21300012
+      button_rock_Play4_12: 21300020
+      button_rock_Play4_53: 21300068
+      button_rock_Play4_46: 21300058
+      button_rock_Play4_54: 21300070
+      button_rock_Play4_1: 21300002
+      button_rock_Play4_29: 21300038
+      button_rock_Play4_48: 21300060
+      button_rock_Play4_52: 21300066
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

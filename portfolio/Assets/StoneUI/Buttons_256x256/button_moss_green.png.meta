@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1312,6 +1313,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      button_moss_green_37: 21300074
+      button_moss_green_10: 21300020
+      button_moss_green_1: 21300002
+      button_moss_green_46: 21300092
+      button_moss_green_4: 21300008
+      button_moss_green_11: 21300022
+      button_moss_green_16: 21300032
+      button_moss_green_18: 21300036
+      button_moss_green_24: 21300048
+      button_moss_green_35: 21300070
+      button_moss_green_28: 21300056
+      button_moss_green_2: 21300004
+      button_moss_green_49: 21300098
+      button_moss_green_14: 21300028
+      button_moss_green_8: 21300016
+      button_moss_green_32: 21300064
+      button_moss_green_33: 21300066
+      button_moss_green_22: 21300044
+      button_moss_green_45: 21300090
+      button_moss_green_20: 21300040
+      button_moss_green_39: 21300078
+      button_moss_green_6: 21300012
+      button_moss_green_12: 21300024
+      button_moss_green_13: 21300026
+      button_moss_green_44: 21300088
+      button_moss_green_29: 21300058
+      button_moss_green_15: 21300030
+      button_moss_green_30: 21300060
+      button_moss_green_43: 21300086
+      button_moss_green_27: 21300054
+      button_moss_green_0: 21300000
+      button_moss_green_26: 21300052
+      button_moss_green_41: 21300082
+      button_moss_green_7: 21300014
+      button_moss_green_25: 21300050
+      button_moss_green_23: 21300046
+      button_moss_green_42: 21300084
+      button_moss_green_38: 21300076
+      button_moss_green_31: 21300062
+      button_moss_green_3: 21300006
+      button_moss_green_17: 21300034
+      button_moss_green_21: 21300042
+      button_moss_green_9: 21300018
+      button_moss_green_34: 21300068
+      button_moss_green_5: 21300010
+      button_moss_green_48: 21300096
+      button_moss_green_19: 21300038
+      button_moss_green_36: 21300072
+      button_moss_green_40: 21300080
+      button_moss_green_47: 21300094
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

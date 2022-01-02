@@ -174,6 +174,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1312,6 +1313,57 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      button_moss_blue_25: 21300050
+      button_moss_blue_46: 21300092
+      button_moss_blue_44: 21300088
+      button_moss_blue_17: 21300034
+      button_moss_blue_10: 21300020
+      button_moss_blue_19: 21300038
+      button_moss_blue_3: 21300006
+      button_moss_blue_26: 21300052
+      button_moss_blue_36: 21300072
+      button_moss_blue_43: 21300086
+      button_moss_blue_23: 21300046
+      button_moss_blue_32: 21300064
+      button_moss_blue_33: 21300066
+      button_moss_blue_21: 21300042
+      button_moss_blue_13: 21300026
+      button_moss_blue_41: 21300082
+      button_moss_blue_9: 21300018
+      button_moss_blue_40: 21300080
+      button_moss_blue_38: 21300076
+      button_moss_blue_4: 21300008
+      button_moss_blue_12: 21300024
+      button_moss_blue_15: 21300030
+      button_moss_blue_47: 21300094
+      button_moss_blue_22: 21300044
+      button_moss_blue_31: 21300062
+      button_moss_blue_0: 21300000
+      button_moss_blue_24: 21300048
+      button_moss_blue_7: 21300014
+      button_moss_blue_35: 21300070
+      button_moss_blue_27: 21300054
+      button_moss_blue_2: 21300004
+      button_moss_blue_37: 21300074
+      button_moss_blue_5: 21300010
+      button_moss_blue_42: 21300084
+      button_moss_blue_28: 21300056
+      button_moss_blue_48: 21300096
+      button_moss_blue_14: 21300028
+      button_moss_blue_1: 21300002
+      button_moss_blue_6: 21300012
+      button_moss_blue_29: 21300058
+      button_moss_blue_20: 21300040
+      button_moss_blue_11: 21300022
+      button_moss_blue_8: 21300016
+      button_moss_blue_16: 21300032
+      button_moss_blue_18: 21300036
+      button_moss_blue_49: 21300098
+      button_moss_blue_30: 21300060
+      button_moss_blue_34: 21300068
+      button_moss_blue_39: 21300078
+      button_moss_blue_45: 21300090
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
