@@ -13,6 +13,12 @@ public class MainUI : MonoBehaviour
     {
         DontDestroyOnLoad(Dragon);
     }
+    private void Start()
+    {
+        Time.timeScale = 1;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     public void Quit(CanvasGroup canvasGroup_)
     {
         if (canvasGroup_.alpha != 1)

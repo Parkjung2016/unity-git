@@ -12,6 +12,9 @@ public class BossSkillManager : MonoBehaviour
     public float knockbackDis;
     GameObject Player;
     BossAttack bossAttack_;
+    public float Skill2Time;
+    public float Skill2TimeFirst;
+    public GameObject Skill2;
     private void Awake()
     {
         bossAttack_ = GetComponent<BossAttack>();
@@ -20,6 +23,8 @@ public class BossSkillManager : MonoBehaviour
     }
     private void Start()
     {
+        Skill2Time = 10;
+        Skill2TimeFirst = Skill2Time;
         IsHeal = false;
     }
     
@@ -31,25 +36,40 @@ public class BossSkillManager : MonoBehaviour
         {
             StopCoroutine(HealCheck());
         }
-        if(knockback)
+        if (Player != null)
         {
-            if(Vector3.Distance(Player.transform.position,transform.position) <=knockbackDis)
-            {
-                Player.GetComponent<PlayerMove>().addImpact(10,500);
 
+            if (knockback)
+            {
+                if (Vector3.Distance(Player.transform.position, transform.position) <= knockbackDis)
+                {
+                    Player.GetComponent<PlayerMove>().addImpact(10, 500);
+
+                    knockback = false;
+                }
+            }
+            if (Vector3.Distance(Player.transform.position, transform.position) > knockbackDis && IsHeal)
+            {
+                knockback = true;
+            }
+            if (!IsHeal)
+            {
                 knockback = false;
             }
         }
-        if (Vector3.Distance(Player.transform.position, transform.position) > knockbackDis && IsHeal)
+        Skill2Time -= 0.01f;
+        if(Skill2Time <= 0)
         {
-            knockback = true;
-        }
-        if(!IsHeal)
-        {
-            knockback = false;
+            Skill2Time = Skill2TimeFirst;
+            GameObject obj = Instantiate(Skill2, Player.transform.position, Quaternion.identity);
+            StartCoroutine(SkillDestroy(obj));
         }
     }
-   
+    IEnumerator SkillDestroy(GameObject obj)
+    {
+        yield return new WaitForSeconds(7);
+        Destroy(obj);
+    }
     IEnumerator ResetHealCount()
     {
         yield return new WaitForSeconds(5);
@@ -68,6 +88,7 @@ public class BossSkillManager : MonoBehaviour
         {
             IsHeal = true;
             anim.Play("Heal");
+            BossHPManager.Instance.Sword.GetComponent<BossWeapon>().Damage = 25;
             knockback = true;
             StartCoroutine(ResetHealCount());
             yield return null;

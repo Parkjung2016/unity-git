@@ -13,8 +13,13 @@ public class UI : MonoBehaviour
     public Image BossHP;
     public Animation QuestAnim;
     bool isfade;
+    public Text BulletText;
+    public Text HPPotionAmountText;
+    public Text HpInteractionKey;
+    public GameObject Pause;
     private void Start()
     {
+        Pause.SetActive(false);
         isfade = false;
         QuestAnim.gameObject.SetActive(false);
     }
@@ -26,6 +31,10 @@ public class UI : MonoBehaviour
             return;
         BossHP.fillAmount = Mathf.Lerp(BossHP.fillAmount, (float)BossHPManager.Instance.Hp / (float)BossHPManager.Instance.MaxHp, Time.deltaTime * LerpSpeed);
     }
+    public void SetHPPotionAmountText()
+    {
+        HPPotionAmountText.text = GameManager.instace.HpPotionAmount.ToString();
+    }
     public void FadeQuestAnim()
     {
         if (isfade)
@@ -33,5 +42,9 @@ public class UI : MonoBehaviour
         QuestAnim.gameObject.SetActive(true);
         QuestAnim.Play();
         isfade = true;
+    }
+    public void SetBulletText(int CurrentBullet,int MaxBullet)
+    {
+        BulletText.text = "Åº¾Ë : " + CurrentBullet + "/" + MaxBullet;
     }
 }

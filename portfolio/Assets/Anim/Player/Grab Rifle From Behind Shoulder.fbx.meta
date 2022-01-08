@@ -66,8 +66,22 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.25830257
+      - time: 0.39478552
         functionName: Rifle_Equip
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.68000036
+        functionName: RifleAttackChange
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7195572
+        functionName: RigBuilder
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

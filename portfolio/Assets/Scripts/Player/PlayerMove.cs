@@ -23,8 +23,8 @@ public class PlayerMove : MonoBehaviour
     public float run;
     public bool movetrue;
     PlayerAttack playerAttack_;
-    Vector3 velocity;
-    Vector3 MoveDir;
+    public Vector3 velocity;
+    public Vector3 MoveDir;
     Rigidbody Rig;
     Collider col;
     public float withShieldSpeed;
@@ -68,7 +68,7 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = withShieldSpeed+0.5f;
             }
-            else if(Input.GetButton("Sprint"))
+            else if(Input.GetButton("Sprint") && !anim.GetBool("RifleAimUp"))
             {
                 speed = run;
             }
@@ -81,7 +81,6 @@ public class PlayerMove : MonoBehaviour
         {
             speed = 0;
         }
-        
         
     }
     private void FixedUpdate()
@@ -191,25 +190,48 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (PlayerHPManager.Instance.death)
+            return;
         if(other.CompareTag("portal"))
         {
-            StartCoroutine(teleport());
+            StartCoroutine(teleport(0));
         }
-        if(other.CompareTag("BossSpawnCol"))
+        if (other.CompareTag("portal2"))
+        {
+            StartCoroutine(teleport(1));
+        }
+        if (other.CompareTag("BossSpawnCol"))
         {
             GameManager.SpawnBoss();
-            Destroy(other);
+            other.gameObject.SetActive(false);
         }
     }
-    IEnumerator teleport()
+    IEnumerator teleport(int num)
     {
-        GameManager.instace.PortalEffect.SetActive(true);
-        movetrue = false;
+        WaitForSeconds wfs = new WaitForSeconds(0.7f);
+            GameManager.instace.SpawnPoint = 1;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
         controller.enabled = false;
-        yield return new WaitForSeconds(0.7f);
-        transform.position = GameManager.instace.TeleportPos;
-        controller.enabled = true;
-        movetrue = true;
-        yield return null;
+        movetrue = false;
+        if (num == 0)
+        {
+            GameManager.instace.PortalEffect.SetActive(true);
+            yield return wfs;
+            transform.position = GameManager.instace.TeleportPos;
+            GameManager.instace.PortalEffect.SetActive(false);
+            controller.enabled = true;
+            movetrue = true;
+            yield return null;
+        }
+        else
+        {
+            GameManager.instace.PortalEffect2.SetActive(true);
+            yield return wfs;
+            transform.position = GameManager.instace.TeleportPos2;
+            GameManager.instace.PortalEffect2.SetActive(false);
+            controller.enabled = true;
+            movetrue = true;
+            yield return null;
+        }
     }
 }

@@ -10,35 +10,35 @@ public class PlayerSwordEffect : MonoBehaviour
     public void SpawnEffect1()
     {
         GameObject Obj = Instantiate(SwordEffects[0], SwordEffectsTrans[0].position, SwordEffectsTrans[0].rotation);
-        StartCoroutine(ParticleDestroy(Obj.GetComponentInChildren<ParticleSystem>()));
+        StartCoroutine(ParticleDestroy(Obj));
     }
     public void SpawnEffect2()
     {
         GameObject Obj = Instantiate(SwordEffects[1], SwordEffectsTrans[1].position, SwordEffectsTrans[1].rotation);
-        StartCoroutine(ParticleDestroy(Obj.GetComponentInChildren<ParticleSystem>()));
+        StartCoroutine(ParticleDestroy(Obj));
     }
     public void SpawnEffect3()
     {
         GameObject Obj = Instantiate(SwordEffects[2], SwordEffectsTrans[2].position, SwordEffectsTrans[2].rotation);
-        StartCoroutine(ParticleDestroy(Obj.GetComponentInChildren<ParticleSystem>()));
+        StartCoroutine(ParticleDestroy(Obj));
 
     }
     public void SpawnEffect4()
     {
         GameObject Obj = Instantiate(SwordEffects[3], SwordEffectsTrans[3].position, SwordEffectsTrans[3].rotation);
-        StartCoroutine(ParticleDestroy(Obj.GetComponentInChildren<ParticleSystem>()));
+        StartCoroutine(ParticleDestroy(Obj));
     }
     public void SpawnEffect5()
     {
         GameObject Obj = Instantiate(SwordEffects[4], SwordEffectsTrans[4].position, SwordEffectsTrans[4].rotation);
-        StartCoroutine(ParticleDestroy(Obj.GetComponentInChildren<ParticleSystem>()));
+        StartCoroutine(ParticleDestroy(Obj));
 
 
     }
-    IEnumerator ParticleDestroy(ParticleSystem ps)
+    IEnumerator ParticleDestroy(GameObject ps)
     {
         yield return new WaitForSeconds(2f);
-        Destroy(ps.transform.parent.gameObject);
+        Destroy(ps);
         yield return null;
     }
 }

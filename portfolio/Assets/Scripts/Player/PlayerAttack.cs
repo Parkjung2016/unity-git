@@ -10,11 +10,16 @@ public class PlayerAttack : MonoBehaviour
     PlayerEquip playerEquip_;
     public bool attacking;
     PlayerWeapon playerWeapon_;
+    public bool FinalAttackCol;
     private void Awake()
     {
         playerWeapon_ = GetComponentInChildren<PlayerWeapon>();
         playerEquip_ = GetComponent<PlayerEquip>();
         anim = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        FinalAttackCol = true;
     }
     private void Update()
     {
@@ -81,6 +86,7 @@ public class PlayerAttack : MonoBehaviour
     }
     public void ComboReset()
     {
+        FinalAttackCol = true;
         playerWeapon_.Col.enabled = false;
         anim.applyRootMotion = false;
         combopossible = false;

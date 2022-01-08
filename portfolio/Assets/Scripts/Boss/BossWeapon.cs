@@ -18,7 +18,7 @@ public class BossWeapon : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            PlayerHPManager.ApplyDamage(Damage);
+            PlayerHPManager.ApplyDamage(Damage,false);
             col.enabled = false;
         }
     }

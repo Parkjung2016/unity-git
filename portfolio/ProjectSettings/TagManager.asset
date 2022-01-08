@@ -10,6 +10,12 @@ TagManager:
   - Boss
   - BossWeapon
   - SwordParticle
+  - Fire
+  - portal2
+  - TeleportPos2
+  - Chest
+  - HPPotion
+  - bossskill
   layers:
   - Default
   - TransparentFX

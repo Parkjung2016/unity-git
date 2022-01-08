@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour
 {
-    Animator anim;
+    private Animator anim;
     bool combopossible;
-   BossMove BossMove_;
+    private BossMove BossMove_;
     public bool attacking;
-    public int Damage;
-    BossWeapon bossWeapon;
+    private BossWeapon bossWeapon;
+    [SerializeField]
+    private GameObject Player;
     private void Awake()
     {
         bossWeapon = GetComponentInChildren<BossWeapon>();
         BossMove_ = GetComponent<BossMove>();
         anim = GetComponent<Animator>();
+    }
+    private void Start()
+    {
+        StartCoroutine(FindPlayer());
+    }
+    IEnumerator FindPlayer()
+    {
+        var wfs = new WaitForSeconds(0.01f);
+        while(Player == null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player");
+            yield return wfs;
+        }
+        yield return null;
     }
     private void Update()
     {
@@ -40,7 +55,6 @@ public class BossAttack : MonoBehaviour
             
         }
         anim.SetBool("Attacking", true);
-
     }
     public void ComboPossible()
     {
@@ -63,6 +77,13 @@ public class BossAttack : MonoBehaviour
                 bossWeapon.col.enabled = true;
             }
         }
+    }
+    public void LookPlayer()
+    {
+        Vector3 vec = Player.transform.position - transform.position;
+        vec.Normalize();
+        Quaternion q = Quaternion.LookRotation(vec);
+        transform.rotation = Quaternion.Euler(0, q.y, 0);
     }
     public void ComboReset()
     {

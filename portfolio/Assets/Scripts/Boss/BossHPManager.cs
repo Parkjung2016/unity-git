@@ -14,8 +14,11 @@ public class BossHPManager : MonoBehaviour
     public GameObject Sword;
     BossAttack bossAttack_;
     BossSkillManager bossSkillManager_;
+    bool fadeplay;
+    PlayerAttack playerAttack;
     private void Awake()
     {
+        playerAttack = GameObject.FindObjectOfType<PlayerAttack>();
         bossSkillManager_ = GetComponent<BossSkillManager>();
         Nav = GetComponent<NavMeshAgent>();
         bossAttack_ = GetComponent<BossAttack>();
@@ -36,22 +39,27 @@ public class BossHPManager : MonoBehaviour
         Hp = Mathf.Clamp(Hp, 0, MaxHp);
         if (Hp == 0)
         {
-            if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Death"))
-                anim.Play("Death");
-            if (Death)
-                return;
-            Sword.transform.parent = null;
-            Sword.AddComponent<Rigidbody>();
-            Destroy(Nav);
-            Destroy(Sword.GetComponent<Collider>());
-            Sword.GetComponent<MeshCollider>().enabled = true;
-            Death = true;
-            Destroy(GetComponent<BossSkillManager>());
+            if (!fadeplay)
+            {
+                fadeplay = true;
+                GameManager.instace.Fade.gameObject.SetActive(true);
+                GameManager.instace.Fade.Play();
+                GameManager.instace.VCam2.SetActive(true);
+                GameManager.instace.PlayerCam.SetActive(false);
+                StartCoroutine( callfinishfade());
+            }
         }
 
     }
+    IEnumerator callfinishfade()
+    {
+        yield return new WaitForSeconds(4);
+        GameManager.instace.FinishFade();
+    }
     public static void ApplyDamage(int Damage)
     {
+        if (Instance.Death)
+            return;
         Instance.bossAttack_.ComboReset();
         Instance.Hp -= Damage;
 
@@ -68,9 +76,11 @@ public class BossHPManager : MonoBehaviour
     }
     private void OnParticleCollision(GameObject other)
     {
-        if(other.CompareTag("SwordParticle"))
+        if(other.CompareTag("SwordParticle") && playerAttack.FinalAttackCol)
         {
             ApplyDamage(15);
+            GameManager.instace.StartCoroutine(GameManager.CameraShake(GetComponentInParent<Animator>(), anim, 1f));
+            playerAttack.FinalAttackCol = false;
         }
     }
 }

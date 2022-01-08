@@ -18,8 +18,10 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (other.CompareTag("Boss"))
         {
-            GameManager.instace.StartCoroutine(GameManager.CameraShake(GetComponentInParent<Animator>(), other.GetComponent<Animator>()));
             Col.enabled = false;
+            if (BossHPManager.Instance.Death)
+                return;
+            GameManager.instace.StartCoroutine(GameManager.CameraShake(GetComponentInParent<Animator>(), other.GetComponent<Animator>(),GameManager.instace.ShakePower));
             BossHPManager.ApplyDamage(Damage);
         }
 
